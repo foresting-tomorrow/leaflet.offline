@@ -1,12 +1,12 @@
 {
   "name": "@foresting-tomorrow/leaflet-offline",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Fork of Offline tilelayer for leaflet",
   "main": "dist/bundle.js",
   "engines": {
     "node": ">=16"
   },
-  "types": "dist/types/src/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "type-check": "tsc --noEmit",
     "docs": "typedoc --plugin typedoc-plugin-markdown --out docs/typedoc src/index.ts",
