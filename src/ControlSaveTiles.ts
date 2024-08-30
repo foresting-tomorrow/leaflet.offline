@@ -2,7 +2,6 @@ import {
     Control,
     ControlOptions,
     DomEvent,
-    DomUtil,
     LatLngBounds,
     bounds,
     Map,
@@ -95,25 +94,6 @@ export class ControlSaveTiles extends Control {
 
     setLayer(layer: TileLayerOffline) {
         this._baseLayer = layer;
-    }
-
-    _createButton(
-        html: string,
-        className: string,
-        container: HTMLElement,
-        fn: DomEvent.EventHandlerFn,
-    ) {
-        const link = DomUtil.create('a', className, container);
-        link.innerHTML = html;
-        link.href = '#';
-        link.ariaRoleDescription = 'button';
-
-        DomEvent.on(link, 'mousedown dblclick', DomEvent.stopPropagation)
-            .on(link, 'click', DomEvent.stop)
-            .on(link, 'click', fn, this)
-            .on(link, 'click', this._refocusOnMap, this);
-
-        return link;
     }
 
     _saveTiles() {
