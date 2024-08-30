@@ -204,7 +204,7 @@ export class ControlSaveTiles extends Control {
     }
 }
 
-export function savetiles(
+export function controlSaveTiles(
     baseLayer: TileLayerOffline,
     options: Partial<SaveTileOptions>,
 ) {

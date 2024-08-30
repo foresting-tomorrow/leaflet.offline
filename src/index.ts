@@ -1,5 +1,5 @@
 export { tileLayerOffline } from './TileLayerOffline';
-export { savetiles } from './ControlSaveTiles';
+export { controlSaveTiles } from './ControlSaveTiles';
 export type {
     SaveStatus,
     ControlSaveTiles,
