@@ -96,7 +96,7 @@ export class ControlSaveTiles extends Control {
         this._baseLayer = layer;
     }
 
-    saveTilesUsingMapBoinds(map: Map) {
+    saveTilesUsingMapBounds(map: Map) {
         this._map = map;
         this.options.bounds = map.getBounds();
         const zoom = map.getZoom();
@@ -223,5 +223,5 @@ export function controlSaveTiles(
 /**  @ts-ignore */
 if (window.L) {
     /**  @ts-ignore */
-    window.L.control.savetiles = savetiles;
+    window.L.control.savetiles = controlSaveTiles;
 }
