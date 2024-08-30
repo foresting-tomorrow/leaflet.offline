@@ -102,19 +102,6 @@ export class ControlSaveTiles extends Control {
     this._baseLayer = layer;
   }
 
-  onAdd() {
-    const container = DomUtil.create('div', 'savetiles leaflet-bar');
-    const { options } = this;
-    this._createButton(
-      options.saveText,
-      'savetiles',
-      container,
-      this._saveTiles,
-    );
-    this._createButton(options.rmText, 'rmtiles', container, this._rmTiles);
-    return container;
-  }
-
   _createButton(
     html: string,
     className: string,
