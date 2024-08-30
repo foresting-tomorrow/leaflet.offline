@@ -10,16 +10,14 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "docs": "typedoc --plugin typedoc-plugin-markdown --out docs/typedoc src/index.ts",
-    "build": "tsc --build .",
+    "build": "rm -rf ./dist && rollup -c",
     "lint": "eslint && prettier --check \"./(src|test)/**/*.ts\"",
     "lint:fix": "eslint --fix src test",
     "format": "eslint --fix src test && prettier -w \"./(src|test)/**/*.ts\"",
     "test": "karma  start",
     "test:watch": "karma start --no-single-run",
     "watch": "rollup -c -w",
-    "preversion": "./node_modules/karma/bin/karma  start  --single-run",
-    "prepare": "husky || true",
-    "prepublishOnly": "npm run build && npx husky install"
+    "preversion": "./node_modules/karma/bin/karma  start  --single-run"
   },
   "repository": {
     "type": "git",
@@ -36,8 +34,6 @@
   },
   "homepage": "https://github.com/foresting-tomorrow/leaflet.offline#readme",
   "devDependencies": {
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2",
     "@rollup/plugin-commonjs": "^25.0.2",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-typescript": "^11.1.5",
@@ -55,7 +51,6 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^9.0.0",
     "fetch-mock": "^9.11.0",
-    "husky": "^9.0.11",
     "karma": "^6.4.2",
     "karma-chai": "^0.1.0",
     "karma-coverage": "^2.2.1",
