@@ -1,5 +1,5 @@
 {
-  "name": "@foresting-tomorrow/leaflet.offline",
+  "name": "@foresting-tomorrow/leaflet-offline",
   "version": "3.0.1",
   "description": "Fork of Offline tilelayer for leaflet",
   "main": "dist/bundle.js",
