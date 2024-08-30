@@ -8,3 +8,6 @@ npm-debug.log
 /tmp/**
 !/tmp/.gitkeep
 coverage
+.envrc
+.direnv
+shell.nix

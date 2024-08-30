@@ -10,7 +10,7 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "docs": "typedoc --plugin typedoc-plugin-markdown --out docs/typedoc src/index.ts",
-    "build": "rm -rf dist && rollup -c",
+    "build": "tsc --build .",
     "lint": "eslint && prettier --check \"./(src|test)/**/*.ts\"",
     "lint:fix": "eslint --fix src test",
     "format": "eslint --fix src test && prettier -w \"./(src|test)/**/*.ts\"",
