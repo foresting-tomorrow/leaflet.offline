@@ -1,7 +1,7 @@
 {
-  "name": "leaflet.offline",
+  "name": "@foresting-tommorow/leaflet.offline",
   "version": "3.0.1",
-  "description": "Offline tilelayer for leaflet",
+  "description": "Fork of Offline tilelayer for leaflet",
   "main": "dist/bundle.js",
   "engines": {
     "node": ">=16"
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/allartk/leaflet.offline.git"
+    "url": "git+https://github.com/foresting-tomorrow/leaflet.offline.git"
   },
   "keywords": [
     "leaflet",
@@ -32,9 +32,9 @@
   "author": "Allart Kooiman",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/allartk/leaflet.offline/issues"
+    "url": "https://github.com/foresting-tomorrow/leaflet.offline/issues"
   },
-  "homepage": "https://github.com/allartk/leaflet.offline#readme",
+  "homepage": "https://github.com/foresting-tomorrow/leaflet.offline#readme",
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
