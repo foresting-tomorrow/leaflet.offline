@@ -99,9 +99,9 @@ export class ControlSaveTiles extends Control {
     saveTilesUsingMapBounds(map: Map) {
         this._map = map;
         this.options.bounds = map.getBounds();
-        const zoom = map.getZoom();
-        this.options.zoomlevels = [zoom, zoom + 1, zoom + 2];
-        this.options.saveWhatYouSee = false;
+        // const zoom = map.getZoom();
+        // this.options.zoomlevels = [zoom, zoom + 1, zoom + 2];
+        this.options.saveWhatYouSee = true;
         this._saveTiles();
     }
 
