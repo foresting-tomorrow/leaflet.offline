@@ -18,13 +18,9 @@ import {
 } from './TileManager';
 
 export interface SaveTileOptions extends ControlOptions {
-  saveText: string;
-  rmText: string;
   maxZoom: number;
   saveWhatYouSee: boolean;
   bounds: LatLngBounds | null;
-  confirm: Function | null;
-  confirmRemoval: Function | null;
   parallel: number;
   zoomlevels: number[] | undefined;
   alwaysDownload: boolean;
@@ -62,13 +58,9 @@ export class ControlSaveTiles extends Control {
     this.options = {
       ...{
         position: 'topleft',
-        saveText: '+',
-        rmText: '-',
         maxZoom: 19,
         saveWhatYouSee: false,
         bounds: null,
-        confirm: null,
-        confirmRemoval: null,
         parallel: 50,
         zoomlevels: undefined,
         alwaysDownload: true,
@@ -142,11 +134,7 @@ export class ControlSaveTiles extends Control {
         loader();
       }
     };
-    if (this.options.confirm) {
-      this.options.confirm(this.status, successCallback);
-    } else {
-      successCallback();
-    }
+    successCallback();
   }
 
   _calculateTiles() {
@@ -223,18 +211,11 @@ export class ControlSaveTiles extends Control {
   }
 
   _rmTiles() {
-    const successCallback = () => {
-      truncate().then(() => {
-        this.status.storagesize = 0;
-        this._baseLayer.fire('tilesremoved');
-        this._baseLayer.fire('storagesize', this.status);
-      });
-    };
-    if (this.options.confirmRemoval) {
-      this.options.confirmRemoval(this.status, successCallback);
-    } else {
-      successCallback();
-    }
+    truncate().then(() => {
+      this.status.storagesize = 0;
+      this._baseLayer.fire('tilesremoved');
+      this._baseLayer.fire('storagesize', this.status);
+    });
   }
 }
 
