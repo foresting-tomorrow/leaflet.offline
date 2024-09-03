@@ -99,15 +99,18 @@ export class ControlSaveTiles extends Control {
     saveTilesUsingMapBounds(map: Map) {
         this._map = map;
         this.options.bounds = map.getBounds();
-        // const zoom = map.getZoom();
-        // this.options.zoomlevels = [zoom, zoom + 1, zoom + 2];
-        this.options.saveWhatYouSee = true;
+        const zoom = map.getZoom();
+        this.options.zoomlevels = [zoom, zoom + 1, zoom + 2];
+        this.options.saveWhatYouSee = false;
         this._saveTiles();
     }
 
     _saveTiles() {
         const tiles = this._calculateTiles();
         this._resetStatus(tiles);
+        tiles.forEach(tile => {
+            console.log(tile.url);
+        });
         const successCallback = async () => {
             this._baseLayer.fire('savestart', this.status);
             const loader = async (): Promise<void> => {
@@ -126,7 +129,7 @@ export class ControlSaveTiles extends Control {
                 loader();
             }
         };
-        successCallback();
+        // successCallback();
     }
 
     _calculateTiles() {
