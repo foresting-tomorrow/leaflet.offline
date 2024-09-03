@@ -1,6 +1,6 @@
 {
   "name": "@foresting-tomorrow/leaflet-offline",
-  "version": "4.0.7",
+  "version": "4.0.8",
   "description": "Fork of Offline tilelayer for leaflet",
   "main": "dist/bundle.js",
   "engines": {
