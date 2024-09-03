@@ -108,9 +108,6 @@ export class ControlSaveTiles extends Control {
     _saveTiles() {
         const tiles = this._calculateTiles();
         this._resetStatus(tiles);
-        tiles.forEach(tile => {
-            console.log(tile.url);
-        });
         const successCallback = async () => {
             this._baseLayer.fire('savestart', this.status);
             const loader = async (): Promise<void> => {
@@ -129,7 +126,7 @@ export class ControlSaveTiles extends Control {
                 loader();
             }
         };
-        // successCallback();
+        successCallback();
     }
 
     _calculateTiles() {
